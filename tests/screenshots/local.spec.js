@@ -12,12 +12,13 @@ test('Порівняння скриншота елемента', async ({ page }
 });
 
 test('Скріншот сторінки info.html', async ({ page }) => {
-  await page.goto('http://localhost:3000/Info');
+  await page.goto('http://localhost:3000/info.html');
   expect(await page.screenshot()).toMatchSnapshot('screenshots/info-page/info-page-full.png');
 });
 
 test('Скріншот h1 елемента на info.html', async ({ page }) => {
-  await page.goto('http://localhost:3000/Info');
+  await page.goto('http://localhost:3000/info.html');
   const element = await page.locator('h1');
   expect(await element.screenshot()).toMatchSnapshot('screenshots/info-page/info-h1.png');
 });
+
